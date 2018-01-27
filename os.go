@@ -1,14 +1,14 @@
 package uaparser
 
 var (
-	linux = &itemSpec{
-		name:            "Linux",
+	linux = &ItemSpec{
+		Name:            "Linux",
 		mustContains:    []string{"Linux"},
 		mustNotContains: []string{"Android"},
 	}
 
-	macOS = &itemSpec{
-		name:            "Mac OS",
+	macOS = &ItemSpec{
+		Name:            "Mac OS",
 		mustContains:    []string{"Mac OS", "Macintosh"},
 		mustNotContains: []string{"iPad", "iPhone", "iPod"},
 		versionSplitters: [][]string{
@@ -17,8 +17,8 @@ var (
 		},
 	}
 
-	windows = &itemSpec{
-		name:            "Windows",
+	windows = &ItemSpec{
+		Name:            "Windows",
 		mustContains:    []string{"Windows"},
 		mustNotContains: []string{"Windows Phone"},
 		versionSplitters: [][]string{
@@ -26,8 +26,8 @@ var (
 		},
 	}
 
-	android = &itemSpec{
-		name:            "Android",
+	android = &ItemSpec{
+		Name:            "Android",
 		mustContains:    []string{"Android"},
 		mustNotContains: []string{"Windows Phone"},
 		versionSplitters: [][]string{
@@ -36,8 +36,8 @@ var (
 		},
 	}
 
-	iOS = &itemSpec{
-		name:            "iOS",
+	iOS = &ItemSpec{
+		Name:            "iOS",
 		mustContains:    []string{"CPU", "OS", "like Mac OS X", "iphone os"},
 		mustNotContains: []string{"Windows Phone"},
 		versionSplitters: [][]string{
@@ -46,8 +46,8 @@ var (
 		},
 	}
 
-	wpOS = &itemSpec{
-		name:            "Windows Phone OS",
+	wpOS = &ItemSpec{
+		Name:            "Windows Phone OS",
 		mustContains:    []string{"Windows Phone OS", "Windows Phone"},
 		mustNotContains: []string{},
 		versionSplitters: [][]string{
@@ -55,8 +55,8 @@ var (
 		},
 	}
 
-	playstationOS = &itemSpec{
-		name:         "PlayStation OS",
+	playstationOS = &ItemSpec{
+		Name:         "PlayStation OS",
 		mustContains: []string{"PlayStation", "PLAYSTATION"},
 		versionSplitters: [][]string{
 			[]string{"PLAYSTATION", "3"},
@@ -64,7 +64,7 @@ var (
 		},
 	}
 
-	_OS = []*itemSpec{
+	OS = []*ItemSpec{
 		linux,
 		macOS,
 		windows,

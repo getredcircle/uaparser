@@ -1,27 +1,27 @@
 package uaparser
 
 var (
-	iPad = &itemSpec{
-		name:         "iPad",
+	iPad = &ItemSpec{
+		Name:         "iPad",
 		mustContains: []string{"iPad"},
 	}
 
-	iPhone = &itemSpec{
-		name:         "iPhone",
+	iPhone = &ItemSpec{
+		Name:         "iPhone",
 		mustContains: []string{"iPhone"},
 	}
 
-	iPod = &itemSpec{
-		name:         "iPod",
+	iPod = &ItemSpec{
+		Name:         "iPod",
 		mustContains: []string{"iPod"},
 	}
 
-	mac = &itemSpec{
-		name:         "Macintosh",
+	mac = &ItemSpec{
+		Name:         "Macintosh",
 		mustContains: []string{"Macintosh"},
 	}
 
-	_DEVICES = []*itemSpec{
+	DEVICES = []*ItemSpec{
 		iPad,
 		iPhone,
 		iPod,

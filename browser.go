@@ -1,8 +1,8 @@
 package uaparser
 
 var (
-	ie = &itemSpec{
-		name:         "IE",
+	ie = &ItemSpec{
+		Name:         "IE",
 		mustContains: []string{"MSIE", "rv:11.0", "Edge/12.0", "IEMobile"},
 		mustNotContains: []string{
 			"360SE",
@@ -21,15 +21,15 @@ var (
 		versionSplitters: [][]string{[]string{"MSIE ", ";"}},
 	}
 
-	firefox = &itemSpec{
-		name:             "Firefox",
+	firefox = &ItemSpec{
+		Name:             "Firefox",
 		mustContains:     []string{"Firefox", "firefox"},
 		mustNotContains:  []string{"Seamonkey", "Opera"},
 		versionSplitters: [][]string{[]string{"Firefox/", " "}},
 	}
 
-	safari = &itemSpec{
-		name:         "Safari",
+	safari = &ItemSpec{
+		Name:         "Safari",
 		mustContains: []string{"Safari", "AppleWebKit"},
 		mustNotContains: []string{
 			"Chrome",
@@ -51,8 +51,8 @@ var (
 		},
 	}
 
-	chrome = &itemSpec{
-		name:         "Chrome",
+	chrome = &ItemSpec{
+		Name:         "Chrome",
 		mustContains: []string{"Chrome"},
 		mustNotContains: []string{
 			"CoolNovo",
@@ -68,8 +68,8 @@ var (
 		versionSplitters: [][]string{[]string{"Chrome/", " "}},
 	}
 
-	edge = &itemSpec{
-		name:         "Edge",
+	edge = &ItemSpec{
+		Name:         "Edge",
 		mustContains: []string{"Chrome", "Edge"},
 		mustNotContains: []string{
 			"CoolNovo",
@@ -84,8 +84,8 @@ var (
 		versionSplitters: [][]string{[]string{"Edge/", " "}},
 	}
 
-	opera = &itemSpec{
-		name:            "Opera",
+	opera = &ItemSpec{
+		Name:            "Opera",
 		mustContains:    []string{"Opera"},
 		mustNotContains: []string{},
 		versionSplitters: [][]string{
@@ -94,35 +94,35 @@ var (
 		},
 	}
 
-	_360se = &itemSpec{
-		name:            "360SE",
+	_360se = &ItemSpec{
+		Name:            "360SE",
 		mustContains:    []string{"360SE", "qihu", "QIHU"},
 		mustNotContains: []string{},
 	}
 
-	sougou = &itemSpec{
-		name:             "Sougou",
+	sougou = &ItemSpec{
+		Name:             "Sougou",
 		mustContains:     []string{"SE ", "MetaSr"},
 		mustNotContains:  []string{},
 		versionSplitters: [][]string{[]string{"SE ", " "}},
 	}
 
-	tencent = &itemSpec{
-		name:             "Tencent Traveler",
+	tencent = &ItemSpec{
+		Name:             "Tencent Traveler",
 		mustContains:     []string{"TencentTraveler"},
 		mustNotContains:  []string{"SE ", "MetaSr"},
 		versionSplitters: [][]string{[]string{"TencentTraveler ", " "}},
 	}
 
-	qq = &itemSpec{
-		name:             "QQ Browser",
+	qq = &ItemSpec{
+		Name:             "QQ Browser",
 		mustContains:     []string{"QQBrowser"},
 		mustNotContains:  []string{},
 		versionSplitters: [][]string{[]string{"QQBrowser/", " "}},
 	}
 
-	maxthon = &itemSpec{
-		name:            "Maxthon",
+	maxthon = &ItemSpec{
+		Name:            "Maxthon",
 		mustContains:    []string{"Maxthon", "MAXTHON"},
 		mustNotContains: []string{},
 		versionSplitters: [][]string{
@@ -131,8 +131,8 @@ var (
 		},
 	}
 
-	playstation = &itemSpec{
-		name:         "PlayStation",
+	playstation = &ItemSpec{
+		Name:         "PlayStation",
 		mustContains: []string{"PlayStation", "PLAYSTATION"},
 		versionSplitters: [][]string{
 			[]string{"PLAYSTATION 3", ")"},
@@ -140,7 +140,7 @@ var (
 		},
 	}
 
-	_BROWSERS = []*itemSpec{
+	BROWSERS = []*ItemSpec{
 		ie,
 		firefox,
 		safari,

@@ -1,14 +1,14 @@
 package uaparser
 
 var (
-	desktop = &itemSpec{
-		name:            "Desktop",
+	desktop = &ItemSpec{
+		Name:            "Desktop",
 		mustContains:    []string{"Windows", "Linux", "Mac OS X", "CrOS", "Macintosh"},
 		mustNotContains: []string{"Windows Phone", "Android", "ARM"},
 	}
 
-	tablet = &itemSpec{
-		name:         "Tablet",
+	tablet = &ItemSpec{
+		Name:         "Tablet",
 		mustContains: []string{"iPad", "Android", "ARM", "PlayBook"},
 		mustNotContains: []string{
 			"Mobile ",
@@ -17,8 +17,8 @@ var (
 		},
 	}
 
-	phone = &itemSpec{
-		name: "Phone",
+	phone = &ItemSpec{
+		Name: "Phone",
 		mustContains: []string{
 			"iPhone",
 			"Android",
@@ -29,16 +29,16 @@ var (
 		mustNotContains: []string{},
 	}
 
-	car = &itemSpec{
-		name: "Car",
+	car = &ItemSpec{
+		Name: "Car",
 		mustContains: []string{
 			"QtCarBrowser",
 		},
 		mustNotContains: []string{},
 	}
 
-	smartTv = &itemSpec{
-		name: "SmartTV",
+	smartTv = &ItemSpec{
+		Name: "SmartTV",
 		mustContains: []string{
 			"SMART-TV",
 			"AppleTV",
@@ -53,7 +53,7 @@ var (
 		mustNotContains: []string{},
 	}
 
-	_DEVICETYPES = []*itemSpec{
+	DEVICETYPES = []*ItemSpec{
 		tablet,
 		phone,
 		car,

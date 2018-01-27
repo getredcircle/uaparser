@@ -5,8 +5,8 @@ import (
 	"unicode"
 )
 
-type itemSpec struct {
-	name             string
+type ItemSpec struct {
+	Name             string
 	mustContains     []string
 	mustNotContains  []string
 	versionSplitters [][]string
@@ -42,7 +42,7 @@ func contains(ua string, tokens []string) bool {
 	return false
 }
 
-func matchSpec(ua string, spec *itemSpec) (info *InfoItem, ok bool) {
+func matchSpec(ua string, spec *ItemSpec) (info *InfoItem, ok bool) {
 	if !contains(ua, spec.mustContains) {
 		return
 	}
@@ -51,7 +51,7 @@ func matchSpec(ua string, spec *itemSpec) (info *InfoItem, ok bool) {
 	}
 
 	info = new(InfoItem)
-	info.Name = spec.name
+	info.Name = spec.Name
 	ok = true
 
 	for _, splitter := range spec.versionSplitters {
@@ -66,7 +66,7 @@ func matchSpec(ua string, spec *itemSpec) (info *InfoItem, ok bool) {
 	return
 }
 
-func searchIn(ua string, specs []*itemSpec) (info *InfoItem) {
+func searchIn(ua string, specs []*ItemSpec) (info *InfoItem) {
 	for _, spec := range specs {
 		if result, ok := matchSpec(ua, spec); ok {
 			info = result
@@ -79,10 +79,10 @@ func searchIn(ua string, specs []*itemSpec) (info *InfoItem) {
 func Parse(ua string) (info *UAInfo) {
 	info = new(UAInfo)
 
-	info.Browser = searchIn(ua, _BROWSERS)
-	info.Device = searchIn(ua, _DEVICES)
-	info.DeviceType = searchIn(ua, _DEVICETYPES)
-	info.OS = searchIn(ua, _OS)
+	info.Browser = searchIn(ua, BROWSERS)
+	info.Device = searchIn(ua, DEVICES)
+	info.DeviceType = searchIn(ua, DEVICETYPES)
+	info.OS = searchIn(ua, OS)
 
 	return
 }
